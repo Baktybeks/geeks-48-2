@@ -1,0 +1,19 @@
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button ($bg-color:blue, $text-color:red) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+@mixin responsive($size) {
+  @media (max-width:$size) {
+    @content
+  }
+}

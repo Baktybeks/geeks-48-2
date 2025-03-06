@@ -1,0 +1,144 @@
+.button {
+  background-color: red;
+  color: green;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-black: purple;
+  --color-red: red;
+  --border-radius: 30px;
+  --border: 1px solid var(var(--border-radius));
+  --container-width: 500px;
+  --container-padding-x: 20px;
+  --input-heght: 42px;
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  padding-inline: var(--container-padding-x);
+  padding-block: 50px;
+  background-color: chocolate;
+  margin-inline: auto;
+  min-width: 375px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-inline: auto;
+  background-color: aquamarine;
+}
+@media (max-width: 800px) {
+  body {
+    background-color: red;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    background-color: blue;
+  }
+}
+@media (max-width: 500px) {
+  body {
+    background-color: green;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: aqua;
+}
+.person .name {
+  color: var(--color-black);
+  font-size: 20px;
+}
+.person .surname {
+  color: green;
+}
+.person .age {
+  color: blue;
+}
+
+@media (max-width: 400px) {
+  body {
+    background-color: yellow;
+  }
+  .container {
+    padding-inline: 10px;
+    padding-block: 10px;
+  }
+  .person .name {
+    font-size: 10px;
+  }
+}
+@media (max-width: 300px) {
+  body {
+    background-color: grey;
+  }
+  .person .name {
+    font-size: 30px;
+  }
+}
+.header {
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+}
+.header-logo {
+  display: flex;
+  gap: 20px;
+}
+.header-menu-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.header-menu-link {
+  text-decoration: none;
+}
+.header-icons {
+  display: flex;
+}
+
+@media (max-width: 960px) {
+  .header-menu {
+    display: none;
+  }
+}
+.fa-heart-pulse {
+  color: red;
+  font-size: 50px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.buttonMixin {
+  background-color: green;
+  color: yellow;
+  padding: 10px;
+  border-radius: 5px;
+}
