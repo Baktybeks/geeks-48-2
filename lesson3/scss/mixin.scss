@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+@mixin tablet {
+  @media screen and (max-width: $breakpoint-1280) {
+    @content
+  }
+};
+
+@mixin mobile {
+  @media screen and (max-width: $breakpoint-480) {
+    @content
+  }
+};
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button ($bg-color: blue, $text-color: red) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+@mixin responsive($size) {
+  @media (max-width:$size) {
+    @content
+  }
+}
