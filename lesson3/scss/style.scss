@@ -1,0 +1,263 @@
+@import './variables.scss';
+@import './button.scss';
+@import './mixin.scss';
+
+
+
+:root {
+  --color-white: #ffffff;
+  --color-black: purple;
+  --color-red: red;
+  --border-radius: 30px;
+  --border: 1px solid var(var(--border-radius));
+  --container-width: 500px;
+  --container-padding-x: 20px;
+  --input-heght: 42px;
+}
+
+.dz2 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+
+  @include tablet {
+    background-color: grey;
+  }
+
+  @include mobile {
+    background-color: purple;
+  }
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  padding-inline: var(--container-padding-x);
+  padding-block: 50px;
+  background-color: chocolate;
+  margin-inline: auto;
+  min-width: 375px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  // margin: 0 auto;
+  // margin: 20px;
+  margin-inline: auto;
+  // margin-block: 20px;
+  background-color: aquamarine;
+
+  @include responsive (800px) {
+    background-color: red;
+  }
+
+  @include responsive (600px) {
+    background-color: blue;
+  }
+
+  @include responsive (500px) {
+    background-color: green;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  // max-width: 200px;
+  background-color: aqua;
+
+  .name {
+    color: var(--color-black);
+    font-size: 20px;
+  }
+
+  .surname {
+    color: green;
+  }
+
+  .age {
+    color: blue;
+  }
+}
+
+// .title {
+//   width: 400px;
+//   background-color: aqua;
+//   height: 50px;
+// }
+
+@media (max-width: 400px) {
+  body {
+    background-color: yellow;
+  }
+
+  .container {
+    padding-inline: 10px;
+    padding-block: 10px;
+  }
+
+  .person {
+    .name {
+      font-size: 10px;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  body {
+    background-color: grey;
+  }
+
+  .person {
+    .name {
+      font-size: 30px;
+    }
+  }
+}
+
+.header {
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+
+  &-logo {
+    display: flex;
+    gap: 20px;
+  }
+
+  &-menu {
+    &-list {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+  }
+
+  &-icons {
+    display: flex;
+  }
+}
+
+@media (max-width:960px) {
+  .header-menu {
+    display: none;
+  }
+}
+
+.fa-heart-pulse {
+  color: red;
+  font-size: 50px;
+}
+
+.box {
+  @include flexCenter();
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.buttonMixin {
+  @include button (green, yellow);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-container {
+  position: relative;
+  display: flex;
+  height: 25px;
+  width: 30px;
+  margin-top: 60px;
+margin-left: 60px;
+
+  .toggle {
+    display: none;
+  }
+
+  .burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    position: absolute;
+
+    span {
+      width: 30px;
+      height: 5px;
+      background-color: black;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    width: 250px;
+    height: 100%;
+    transform: translate(100%);
+
+    ul {
+      list-style: none;
+
+      li {
+        padding: 20px;
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-style: 20px;
+        }
+      }
+    }
+  }
+}
+
+.toggle:checked+.burger-icon+.menu {
+  transform: translateX(0);
+}
+
+.toggle:checked+.burger-icon {
+  span:nth-child(1) {
+    transform-origin: left top;
+    transform: rotate(45deg);
+    position: relative;
+  }
+  span:nth-child(2) {
+    opacity: 0;
+    }
+  span:nth-child(3) {
+    transform-origin: left bottom;
+    transform: rotate(-45deg);
+    position: relative;
+  }
+
+}
