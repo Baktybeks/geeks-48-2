@@ -1,0 +1,189 @@
+.button {
+  background-color: red;
+  color: green;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter28pt-Regular.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter28pt-Medium.woff2") format(woff2);
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter28pt-SemiBold.woff2") format(woff2);
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-black: purple;
+  --color-red: red;
+  --border-radius: 30px;
+  --border: 1px solid var(var(--border-radius));
+  --container-width: 500px;
+  --container-padding-x: 20px;
+  --input-heght: 42px;
+  --font-family-base: "Inter", sans-serif;
+}
+
+.title {
+  font-size: 20px;
+  font-family: var(--font-family-base);
+  font-weight: 400;
+}
+
+.title1 {
+  font-size: 20px;
+  font-family: var(--font-family-base);
+  font-weight: 500;
+}
+
+.title2 {
+  font-size: 20px;
+  font-family: var(--font-family-base);
+  font-weight: 600;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.boxs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.boxs .lorem {
+  background-color: aqua;
+  min-width: 100px;
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+}
+.boxs .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boxs .box1 {
+  flex: 1 1 20%;
+  background-color: red;
+}
+.boxs .box2 {
+  flex: 1 1 30%;
+  background-color: green;
+}
+.boxs .box3 {
+  flex: 1 1 50%;
+  background-color: blue;
+}
+
+.header {
+  display: flex;
+}
+.header .box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .box1 {
+  width: 20%;
+  background-color: red;
+}
+.header .box2 {
+  width: 30%;
+  background-color: green;
+}
+.header .box3 {
+  width: 50%;
+  background-color: blue;
+}
+
+.footer {
+  display: flex;
+}
+.footer .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .box1 {
+  width: 20%;
+  background-color: red;
+}
+.footer .box2 {
+  width: 30%;
+  background-color: green;
+}
+.footer .box3 {
+  width: 50%;
+  background-color: blue;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 1px red solid;
+}
+
+.wrap {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.clamp {
+  font-family: var(--font-family-base);
+  font-size: clamp(24px, 24px + 36 * (100vw - 360px) / 920, 60px);
+  font-weight: 600;
+  background-color: red;
+}
+.clamp .child-em {
+  font-size: 1.5em;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+}
+.parent .child-rem {
+  font-size: 2rem;
+}
+.parent .child-em {
+  font-size: 2em;
+}
+.parent .child-px {
+  font-size: 40px;
+}
